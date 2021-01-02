@@ -3032,19 +3032,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-138",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 449.750005841255188, 50.0, 150.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 449.750005841255188, 50.0, 150.0, 20.0 ],
-					"text" : "Rotary Encoder Value"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-63",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -4162,29 +4149,6 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 201.0, 181.0, 189.0, 22.0 ],
 									"text" : "10"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-49",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 508.500002920627594, 447.0, 150.0, 20.0 ],
-									"text" : "Rotary Encoder"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-13",
-									"maxclass" : "number",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 456.500002920627594, 446.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -8644,8 +8608,12 @@
 				"name" : "MMJforM",
 				"button" : 				{
 					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
-					"elementcolor" : [ 0.682032, 0.698052, 0.748716, 1.0 ]
+					"elementcolor" : [ 0.682032, 0.698052, 0.748716, 1.0 ],
+					"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ]
+				}
+,
+				"kslider" : 				{
+					"color" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 ,
 				"default" : 				{
@@ -8660,19 +8628,15 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
 					"elementcolor" : [ 0.682032, 0.698052, 0.748716, 1.0 ],
+					"bgcolor" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
 					"patchlinecolor" : [ 0.32549, 0.345098, 0.372549, 0.9 ]
-				}
-,
-				"kslider" : 				{
-					"color" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 ,
 				"slider" : 				{
 					"color" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
-					"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
-					"elementcolor" : [ 0.317141, 0.341132, 0.336206, 1.0 ]
+					"elementcolor" : [ 0.317141, 0.341132, 0.336206, 1.0 ],
+					"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ]
 				}
 ,
 				"message" : 				{
@@ -8689,13 +8653,13 @@
 				}
 ,
 				"number" : 				{
-					"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
-					"accentcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ]
+					"accentcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ]
 				}
 ,
 				"newobj" : 				{
-					"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
-					"accentcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ]
+					"accentcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
+					"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -8713,9 +8677,9 @@
 , 			{
 				"name" : "newobj001",
 				"default" : 				{
-					"bgcolor" : [ 0.305882, 0.560784, 0.529412, 1.0 ],
 					"fontsize" : [ 14.0 ],
 					"accentcolor" : [ 0.305882, 0.560784, 0.529412, 1.0 ],
+					"bgcolor" : [ 0.305882, 0.560784, 0.529412, 1.0 ],
 					"fontname" : [ "Arial" ]
 				}
 ,
@@ -8725,8 +8689,8 @@
 , 			{
 				"name" : "r",
 				"default" : 				{
-					"bgcolor" : [ 0.305882, 0.560784, 0.529412, 1.0 ],
-					"accentcolor" : [ 0.305882, 0.560784, 0.529412, 1.0 ]
+					"accentcolor" : [ 0.305882, 0.560784, 0.529412, 1.0 ],
+					"bgcolor" : [ 0.305882, 0.560784, 0.529412, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -8757,10 +8721,10 @@
 , 			{
 				"name" : "robin-pale-entry",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"bgcolor" : [ 0.835941, 0.83802, 0.894216, 1.0 ],
 					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ]
+					"bgcolor" : [ 0.835941, 0.83802, 0.894216, 1.0 ],
+					"fontname" : [ "Arial" ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
