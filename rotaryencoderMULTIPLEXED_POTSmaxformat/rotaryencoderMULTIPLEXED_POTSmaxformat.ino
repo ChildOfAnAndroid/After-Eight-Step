@@ -59,6 +59,7 @@ int wait = 5;
 void setup() 
 {
   Serial.begin(9600);
+  
  //POTENTIOMETERS
   pinMode(inhibitMux,OUTPUT);
   digitalWrite(inhibitMux,LOW);
@@ -66,6 +67,7 @@ void setup()
   PORTB = 0b00000000; //PORT 8,9,10 set to low
   pinMode(potsA,INPUT);
   pinMode(potsB,INPUT);
+  
  //ROTARY ENCODER
   pinMode(encoderA,INPUT_PULLUP);
   pinMode(encoderB,INPUT_PULLUP);
@@ -73,9 +75,11 @@ void setup()
   //on interrupt 0 (pin 2), or interrupt 1 (pin 3)
   attachInterrupt(0, updateEncoder, CHANGE);
   attachInterrupt(1, updateEncoder, CHANGE);
+  
  //LEDs
   pinMode(ledAPins, OUTPUT);
   pinMode(ledBPins, OUTPUT);
+  
  //LCD SCREEN
   lcd.begin(16, 2);
   lcd.print("Markov Sequencer");
@@ -90,14 +94,12 @@ void loop()
 {
   Serial.flush();
 
-  // read the state of the switch into a local variable:
+  //read the state of the switch into a local variable:
   int reading = digitalRead(encoderButton);
 
-  // check to see if you just pressed the button
-  // (i.e. the input went from LOW to HIGH),  and you've waited
-  // long enough since the last press to ignore any noise:
+  //check to see if you just pressed the button and wait to avoid noise
 
-  // If the switch changed, due to noise or pressing:
+  //if the switch changed, due to noise or pressing:
   if (reading != lastButtonState) {
     // reset the debouncing timer
     lastDebounceTime = millis();
@@ -105,14 +107,12 @@ void loop()
   }
 
   if ((millis() - lastDebounceTime) > debounceDelay) {
-    // whatever the reading is at, it's been there for longer
-    // than the debounce delay, so take it as the actual current state:
 
-    // if the button state has changed:
+    //if the button state has changed:
     if (reading != buttonState) {
       buttonState = reading;
      
-      // Increment the setting number by 1
+      //increment the setting number by 1
       if (buttonState == HIGH) {
           setting++;
       }
@@ -202,56 +202,18 @@ void loop()
       PORTB=0b00000111;  //Data flow - X7 (current step)
       digitalWrite(ledBPins, HIGH);
     }
-#if 0
-    if (incomingByte == 'Q') {
-      PORTB=0b00000000; //Data flow - X0 (current step)
-      digitalWrite(ledCPins, HIGH);
-    }
-    if (incomingByte == 'R') {
-      PORTB=0b00000001; //Data flow - X1 (current step)
-      digitalWrite(ledCPins, HIGH);
-    }
-    if (incomingByte == 'S') {
-      PORTB=0b00000010;  //Data flow - X2 (current)
-      digitalWrite(ledCPins, HIGH); 
-    }
-    if (incomingByte == 'T') {
-      PORTB=0b00000011;  //Data flow - X3 (current step)
-      digitalWrite(ledCPins, HIGH);
-    }
-    if (incomingByte == 'U') {
-      PORTB=0b00000100;  //Data flow - X4 (current step)
-      digitalWrite(ledCPins, HIGH);
-    }
-    if (incomingByte == 'V') {
-      PORTB=0b00000101;  //Data flow - X5 (current step)
-      digitalWrite(ledCPins, HIGH);
-    }
-    if (incomingByte == 'W') {
-      PORTB=0b00000110;  //Data flow - X6 (current step)
-      digitalWrite(ledCPins, HIGH);
-    }
-    else if (incomingByte == 'X') {
-      PORTB=0b00000111;  //Data flow - X7 (current step)
-      digitalWrite(ledCPins, HIGH);
-    }
-#endif
 
   delay(wait);
   digitalWrite(ledAPins, LOW);
   digitalWrite(ledBPins, LOW);
-//  digitalWrite(ledCPins, LOW);
-  
   
  //TO MAX
-  //#if 0
   PORTB=0b00000000; //Data flow - X0
   int step1A = analogRead(potsA); //read data from X0 potsA
   Serial.print(step1A);
   int step1B = analogRead(potsB); //read data from X0 potsB
   Serial.print(" ");
   Serial.print(step1B);
-//  delay(wait);
  
   PORTB=0b00000001;  //Data flow - X1
   int step2A = analogRead(potsA); //read data from X1 potsA
@@ -260,7 +222,6 @@ void loop()
   int step2B = analogRead(potsB); //read data from X1 potsB
   Serial.print(" ");
   Serial.print(step2B);
-//  delay(wait);
   
   PORTB=0b00000010;  //Data flow - X2
   int step3A = analogRead(potsA); //read data from X2 potsA
@@ -269,7 +230,6 @@ void loop()
   int step3B = analogRead(potsB); //read data from X2 potsB
   Serial.print(" ");
   Serial.print(step3B);
-//  delay(wait);
   
   PORTB=0b00000011;  //Data flow - X3
   int step4A = analogRead(potsA); //read data from X3 potsA
@@ -278,7 +238,6 @@ void loop()
   int step4B = analogRead(potsB); //read data from X3 potsB
   Serial.print(" ");
   Serial.print(step4B);
-//  delay(wait);
 
   PORTB=0b00000100;  //Data flow - X4
   int step5A = analogRead(potsA); //read data from X4 potsA
@@ -287,7 +246,6 @@ void loop()
   int step5B = analogRead(potsB); //read data from X4 potsB
   Serial.print(" ");
   Serial.print(step5B);
-//  delay(wait);
 
   PORTB=0b00000101;  //Data flow - X5
   int step6A = analogRead(potsA); //read data from X5 potsA
@@ -296,7 +254,6 @@ void loop()
   int step6B = analogRead(potsB); //read data from X5 potsB
   Serial.print(" ");
   Serial.print(step6B);
-//  delay(wait);
 
   PORTB=0b00000110;  //Data flow - X6
   int step7A = analogRead(potsA); //read data from X7 potsA
@@ -305,7 +262,6 @@ void loop()
   int step7B = analogRead(potsB); //read data from X7 potsB
   Serial.print(" ");
   Serial.print(step7B);
-//  delay(wait);
 
   PORTB=0b00000111;  //Data flow - X7
   int step8A = analogRead(potsA); //read data from X8 potsA
@@ -314,7 +270,6 @@ void loop()
   int step8B = analogRead(potsB); //read data from X8 potsB
   Serial.print(" ");
   Serial.print(step8B);
-//  delay(wait);
   
   digitalWrite(inhibitMux,HIGH);  // Inhibit / stop all data
   delay(wait);  
