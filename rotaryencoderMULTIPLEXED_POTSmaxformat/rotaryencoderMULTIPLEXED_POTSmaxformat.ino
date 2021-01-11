@@ -81,9 +81,9 @@ void setup()
   
  //LCD SCREEN
   lcd.begin(16, 2);
-  lcd.print("Markov Sequencer");
+  lcd.print("After Eight Step");
   lcd.setCursor(0,1);
-  lcd.print("Charis Cat 2020");
+  lcd.print("Charis Cat 2021");
 
  //TO MAX
   establishContact();  // send a byte to establish contact until receiver responds
@@ -292,12 +292,6 @@ void loop()
   Serial.print(scaledEncoder3);
   Serial.print(" ");
   Serial.println(setting); //Encoder button value... loop of 3 
-
-//  if(setting > 0){
-//  lcd.clear();
-//  lcd.setCursor(0,0);
-//  lcd.print(lcdMenu[setting]);
-//  }
   
   if(setting == 1){
 //    lcd.clear();
@@ -325,9 +319,9 @@ void loop()
 
   else if(setting < 1 || setting > 3){
     lcd.setCursor(0,0);
-    lcd.print("Markov Sequencer");
+    lcd.print("After Eight Step");
     lcd.setCursor(0,1);
-    lcd.print("Charis Cat 2020");
+    lcd.print("Charis Cat 2021");
   }
   }
 }
@@ -338,8 +332,10 @@ void updateEncoder(){
 
   int encoded = (MSB << 1) |LSB; //converting the 2 pin value to single number 
   int sum = (lastEncoded << 2) | encoded; //adding it to the previous encoded value 
-  if(sum == 0b1101 || sum == 0b0100 || sum == 0b0010 || sum == 0b1011) encoderValue ++; //these values mean the encoder is turning clockwise
-  if(sum == 0b1110 || sum == 0b0111 || sum == 0b0001 || sum == 0b1000) encoderValue --; //these values mean the encoder is turning counter clockwise
+  if(sum == 0b1101 || sum == 0b0100 || sum == 0b0010 || sum == 0b1011) 
+      encoderValue --; //these values mean the encoder is turning counter clockwise
+  if(sum == 0b1110 || sum == 0b0111 || sum == 0b0001 || sum == 0b1000) 
+      encoderValue ++; //these values mean the encoder is turning clockwise
   switch (setting) {
     case 1 :
       setting1 = encoderValue;
