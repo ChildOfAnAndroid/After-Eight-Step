@@ -32,9 +32,9 @@ int wait = 5;
   //Button Setting
    int setting = 0;
   
-   int setting1;
-   int setting2;
-   int setting3;
+   int setting1 = 0;
+   int setting2 = 0;
+   int setting3 = 0;
 
 //Green Button
  const int buttonPin = A4;
@@ -114,6 +114,18 @@ void loop()
       //increment the setting number by 1
       if (buttonState == HIGH) {
           setting++;
+            switch (setting) {
+                encoderValue = 0;
+              case 1 :
+                encoderValue = setting1;
+                break;
+              case 2 :
+                encoderValue = setting2;
+                break;
+              case 3 :
+                encoderValue = setting3;
+                break;
+             }
       }
     }
     }
@@ -282,7 +294,7 @@ void loop()
   //Rotary Encoder
   Serial.print(" ");
   int encoderButton = digitalRead(encoderButton);
-  int scaledEncoder1 = (((setting1) - 2) / 4);
+  int scaledEncoder1 = (((setting1) - 2) / 4); //maths counteracts multiple stop encoder
   Serial.print(scaledEncoder1);
   Serial.print(" ");
   int scaledEncoder2 = (((setting2) - 2) / 4);
