@@ -35,11 +35,13 @@ int wait = 5;
    int setting1;
    int setting2;
    int setting3;
+
+//Green Button
+ const int buttonPin = A4;
   
 //LEDs
  const int ledAPins = A2;
  const int ledBPins = A3;
- // const int ledCPins = A4;
 
  int incomingByte; //Read byte from Max
 
@@ -275,6 +277,12 @@ void loop()
   delay(wait);  
   digitalWrite(inhibitMux,LOW);  // Inhibit /  let data flow
 
+  //Green Button
+  Serial.print(" ");
+  int buttonRead = digitalRead(buttonPin);
+  Serial.print(buttonRead);
+
+  //Rotary Encoder
   Serial.print(" ");
   int encoderButton = digitalRead(encoderButton);
   int scaledEncoder1 = (((setting1) - 2) / 4);
