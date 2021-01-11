@@ -55,9 +55,6 @@ int wait = 5;
  const int lcdD7 = 13;
  LiquidCrystal lcd(registerSelect, enable, lcdD4, lcdD5, lcdD6, lcdD7);
 
- //Menu
-  char *lcdMenu[] = {0, "FORWARD CHANCE", "REVERSE CHANCE", "LONG NOTE CHANCE"};
-
 void setup() 
 {
   Serial.begin(9600);
@@ -293,10 +290,8 @@ void loop()
   Serial.print(" ");
   int scaledEncoder3 = (((setting3) - 2) / 4);
   Serial.print(scaledEncoder3);
-  //Serial.print(encoderValue); //Rotary encoder value
   Serial.print(" ");
-  //Serial.println(encoderButton); //Rotary encoder button
-  Serial.println(setting); //Encoder button loop of 3 
+  Serial.println(setting); //Encoder button value... loop of 3 
 
 //  if(setting > 0){
 //  lcd.clear();
@@ -305,27 +300,34 @@ void loop()
 //  }
   
   if(setting == 1){
-    lcd.clear();
+//    lcd.clear();
     lcd.setCursor(0,0);
-    lcd.print(lcdMenu[setting]);
+    lcd.print("FORWARD CHANCE");
     lcd.setCursor(0,1);
     lcd.print(scaledEncoder1);
   }
 
   if(setting == 2){
-    lcd.clear();
+//    lcd.clear();
     lcd.setCursor(0,0);
-    lcd.print(lcdMenu[setting]);
+    lcd.print("REVERSE CHANCE");
     lcd.setCursor(0,1);
     lcd.print(scaledEncoder2);
   }
 
   if(setting == 3){
-    lcd.clear();
+//    lcd.clear();
     lcd.setCursor(0,0);
-    lcd.print(lcdMenu[setting]);
+    lcd.print("LONG NOTE CHANCE");
     lcd.setCursor(0,1);
     lcd.print(scaledEncoder3);
+  }
+
+  else if(setting < 1 || setting > 3){
+    lcd.setCursor(0,0);
+    lcd.print("Markov Sequencer");
+    lcd.setCursor(0,1);
+    lcd.print("Charis Cat 2020");
   }
   }
 }
