@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1546.0, 61.0, 1034.0, 647.0 ],
+		"rect" : [ 1546.0, 87.0, 1034.0, 647.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,42 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-162",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 378.750005841255188, 595.0, 150.0, 20.0 ],
+					"text" : "MIDI OUTPUT "
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-113",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 465.750005841255188, 8.0, 392.0, 47.0 ],
+					"presentation_linecount" : 6,
+					"text" : "YOU MAY NEED TO OPEN AND CLOSE THE SERIAL PORTS IN ORDER TO START THE CONNECTION, please see bottom of the patch :)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-92",
+					"linecount" : 7,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 163.0, 1707.666665554046631, 150.0, 100.0 ],
+					"text" : "YOU MAY NEED TO OPEN AND CLOSE THE SERIAL PORTS IN ORDER TO START THE CONNECTION, see the three message boxes to the right >>>"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-150",
 					"linecount" : 2,
 					"maxclass" : "comment",
@@ -58,7 +94,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 646.640674726963084, 1129.563206477165295, 150.0, 74.0 ],
-					"presentation_linecount" : 5,
 					"text" : "DOUBLE CLICK TO SET TO MIDI OUTPUT OF CHOICE - CHOOSE NONE TO USE CYCLE SYNTH"
 				}
 
@@ -71,7 +106,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1676.216773049831318, 1129.563206477165295, 150.0, 74.0 ],
-					"presentation_linecount" : 5,
 					"text" : "DOUBLE CLICK TO SET TO MIDI OUTPUT OF CHOICE - CHOOSE NONE TO USE CYCLE SYNTH"
 				}
 
@@ -796,8 +830,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 555.499989986419678, 1720.666665554046631, 206.0, 20.0 ],
-					"text" : "click here to open the serial port"
+					"patching_rect" : [ 562.500005841255188, 1720.666665554046631, 465.0, 20.0 ],
+					"text" : "click here to open the serial port // CHANGE LETTER IF USING DIFFERENT PORT "
 				}
 
 			}
@@ -1004,7 +1038,7 @@
 					"patching_rect" : [ 430.750005841255188, 220.0, 150.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 515.750005841255188, 223.0, 150.0, 20.0 ],
-					"text" : "A Pots"
+					"text" : "A Pots (probability)"
 				}
 
 			}
@@ -2629,7 +2663,7 @@
 					"patching_rect" : [ 430.750005841255188, 377.0, 150.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 440.750005841255188, 215.0, 150.0, 20.0 ],
-					"text" : "B Pots"
+					"text" : "B Pots (pitch)"
 				}
 
 			}
@@ -3186,7 +3220,7 @@
 					"patching_rect" : [ 430.750005841255188, 629.0, 150.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 425.750005841255188, 200.0, 150.0, 20.0 ],
-					"text" : "Scaled B Pots"
+					"text" : "Scaled B Pots (pitch)"
 				}
 
 			}
@@ -7368,32 +7402,32 @@
 			}
 , 			{
 				"name" : "MMJforM",
-				"number" : 				{
+				"newobj" : 				{
 					"accentcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
 					"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ]
 				}
 ,
-				"newobj" : 				{
+				"number" : 				{
 					"accentcolor" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
 					"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ]
 				}
 ,
 				"slider" : 				{
 					"elementcolor" : [ 0.317141, 0.341132, 0.336206, 1.0 ],
-					"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
-					"color" : [ 0.862745, 0.870588, 0.878431, 1.0 ]
+					"color" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
+					"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ]
 				}
 ,
 				"button" : 				{
 					"elementcolor" : [ 0.682032, 0.698052, 0.748716, 1.0 ],
-					"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
-					"color" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ]
 				}
 ,
 				"default" : 				{
 					"elementcolor" : [ 0.682032, 0.698052, 0.748716, 1.0 ],
 					"patchlinecolor" : [ 0.32549, 0.345098, 0.372549, 0.9 ],
-					"bgcolor" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
+					"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "color",
 						"color" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
@@ -7404,6 +7438,10 @@
 						"autogradient" : 0
 					}
 ,
+					"bgcolor" : [ 0.311041, 0.314599, 0.318357, 1.0 ]
+				}
+,
+				"kslider" : 				{
 					"color" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 ,
@@ -7418,10 +7456,6 @@
 						"autogradient" : 0
 					}
 
-				}
-,
-				"kslider" : 				{
-					"color" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -7439,10 +7473,10 @@
 , 			{
 				"name" : "newobj001",
 				"default" : 				{
-					"fontsize" : [ 14.0 ],
 					"accentcolor" : [ 0.305882, 0.560784, 0.529412, 1.0 ],
-					"fontname" : [ "Arial" ],
-					"bgcolor" : [ 0.305882, 0.560784, 0.529412, 1.0 ]
+					"fontsize" : [ 14.0 ],
+					"bgcolor" : [ 0.305882, 0.560784, 0.529412, 1.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -7483,10 +7517,10 @@
 , 			{
 				"name" : "robin-pale-entry",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"fontsize" : [ 12.0 ],
-					"fontname" : [ "Arial" ],
 					"bgcolor" : [ 0.835941, 0.83802, 0.894216, 1.0 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
