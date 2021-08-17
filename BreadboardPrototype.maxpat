@@ -530,7 +530,7 @@
 					"presentation" : 1,
 					"presentation_linecount" : 6,
 					"presentation_rect" : [ 407.066674113273734, 453.166667580604553, 211.333335161209106, 87.0 ],
-					"text" : "YOU MAY NEED TO OPEN AND CLOSE THE SERIAL PORTS IN ORDER TO START THE CONNECTION IF USING ARDUINO, see the three message boxes to the right >>>"
+					"text" : "YOU MAY NEED TO CLOSE THEN REOPEN THE SERIAL PORTS IN ORDER TO START THE CONNECTION IF USING ARDUINO, see the three message boxes to the right >>>"
 				}
 
 			}
